@@ -1,9 +1,12 @@
 import React from 'react'
+import Index from './pages/home/index';
+import './reset.scss';
+import './pages/home/index.scss';
 
-type Props = {}
-
-export default function App({}: Props) {
+export default function App() {
   return (
-    <div>App</div>
+    <div>
+      <Index />
+    </div>
   )
 }
