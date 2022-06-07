@@ -1,0 +1,17 @@
+.search-form {
+    display: flex;
+    flex-direction: row;
+    margin: 1.5rem;
+}
+
+.search-form__input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #C4C4C4;
+    padding: 1rem;
+}
+
+.search-form__button {
+    background-color: #C4C4C4;
+    border: none;
+}

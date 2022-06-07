@@ -1,0 +1,112 @@
+.product-list {
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links {
+    text-decoration: none;
+}
+
+.latest-releases__h2 {
+    margin: 1.5rem;
+}
+
+.product-list__list-itens {
+    border: 1px solid #C4C4C4;
+    border: none;
+}
+
+.product-list__sizes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0.3rem;
+}
+
+.product-list__sizes__itens {
+    padding: 0.3rem;
+    border: 1px solid #C4C4C4;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-price {
+    font-weight: bold;
+    color: chocolate;
+}
+
+.item-text p {
+    margin: 0.5rem 0;
+}
+
+.add-to-bag-button {
+    color: #FFFFFF;
+    background-color: #008844;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    margin: 0.5rem 0;
+    perspective: 500px;
+}
+
+.card-inner {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: grid;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    grid-column-start: 1;
+    grid-column-end: 8;
+}
+
+.add-to-bag-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.card-front {
+    grid-column-start: 1;
+    grid-column-end: 8;
+}
+
+.card-front,
+.card-back {
+    display: grid;
+    backface-visibility: hidden;
+}
+
+.card-front__text {
+    font-size: 0.8em;
+    grid-column-start: 3;
+    grid-column-end: 6;
+    align-self: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart {
+    border-radius: 4px;
+    background-color: #008844;
+    border: none;
+    grid-column-start: 8;
+}
+
+.card-back {
+    position: absolute;
+    background-color: blue;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width:1300px) {
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
