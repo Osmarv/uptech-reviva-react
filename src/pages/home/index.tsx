@@ -12,7 +12,6 @@ class Index extends React.Component {
         return (
             <>
             <Header />
-
             <main className="main">
                 <MainMenu />
                 <SearchhForm />
@@ -20,20 +19,14 @@ class Index extends React.Component {
                     <h2 className="latest-releases__h2 h2">Últimos lançamentos</h2>        
                     <Products />
                 </section>
-
                 <Banner />
-
                 <section className="summer-collection">
                     <h2 className="summer-collection__h2 h2">Coleção de verão 2022</h2>
                     <Products />
                 </section>
-
                 <FashionTips />
-
             </main>
-
-            <Footer />
-            
+            <Footer />           
             </>
         )
     }
