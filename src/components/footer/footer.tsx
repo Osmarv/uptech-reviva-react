@@ -53,7 +53,7 @@ class Footer extends React.Component {
                     <div className="newsletter ">
                         <h3 className="h3">Assine nossa newsletter</h3>
                         <div className="newsletter__div">
-                            <input type="email " id="email " placeholder="Digite seu email "/>
+                            <input type="email " className="newsletter__text" id="email " placeholder="Digite seu email "/>
                             <input type="submit " className="newsletter__button " value="CADASTRAR "/>
                         </div>
                     </div>
