@@ -11,7 +11,7 @@ export default function AppRouter() {
                 <Route path="/">
                     <Route index element={<Index />}/>
                     <Route path="carrinho" element={<Carrinho />} />
-                    <Route path="detalhes" element={<Detalhes />} />
+                    <Route path="detalhes:id" element={<Detalhes />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>

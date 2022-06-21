@@ -1,5 +1,6 @@
 export interface Items {
-    nome: string
+    id: number,
+    nome: string,
     url: string,
     preco: number,
     descricao: string,
@@ -15,6 +16,7 @@ export interface Images {
     
 export const estoque: Array<Items> =
     [{
+        id: 1,
         nome: 'Cropped preto AK by Riachuelo',
         url: 'cropped-preto-ak-by-riachuelo',
         preco: 29.90,
@@ -27,6 +29,7 @@ export const estoque: Array<Items> =
     },
 
     {
+        id: 2,
         nome: 'Regata listrada AK by Riachuelo',
         url: 'regata-listrada-ak-by-riachuelo',
         preco: 39.90,
@@ -39,6 +42,7 @@ export const estoque: Array<Items> =
     },
 
     {
+        id: 3,
         nome: 'Calça larga preto AK by Riachuelo',
         url: 'calça-larga-preto-ak-by-riachuelo',
         preco: 99.90,
@@ -51,6 +55,7 @@ export const estoque: Array<Items> =
     },
 
     {
+        id: 4,
         nome: 'Vestido amarelo AK by Riachuelo',
         url: 'calca-alfaiataria',
         preco: 179.90,
