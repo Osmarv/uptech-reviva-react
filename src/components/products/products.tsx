@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { estoque } from "../../pages/home/data";
 
 class Products extends React.Component {
@@ -8,7 +9,9 @@ class Products extends React.Component {
                 {estoque.map((item) => (
                 <div>
                     <div className="product-list__list-itens">
-                        <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="269px" height="209px"/>
+                        <Link to="detalhes">
+                            <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="269px" height="209px" />
+                        </Link>
                         <div className="product-list__sizes">
                             <p className="product-list__sizes__itens">{item.tamanhos_disponiveis[0]}</p>
                             <p className="product-list__sizes__itens">{item.tamanhos_disponiveis[1]}</p>
