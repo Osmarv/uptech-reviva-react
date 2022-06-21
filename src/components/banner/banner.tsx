@@ -1,20 +1,59 @@
 import React from "react";
+import styled from "styled-components";
+
+const BannerWrap = styled.div`
+    background-color: #D6BBA3;
+    margin: 1.5rem;
+`;
+
+const BannerText = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+`;
+
+const BannerTextBottom = styled.p`
+    display: flex;
+`;
+
+const BannerTextBrand = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+`;
+
+const BannerTextBrandH1 = styled.h1`
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+`;
+
+const BannerTextBrandP = styled.h1`
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+`;
 
 class Banner extends React.Component {
     render() {
         return (
-            <section className="banner">
-                <div className="banner__wrap">
-                    <div className="banner__text">
+            <section>
+                <BannerWrap>
+                    <BannerText>
                         <p className="p">Fique por dentro de tudo que há de novidade no mundo da moda!</p>
-                        <p className="banner__text-bottom p">Baixe já nosso manual de moda!</p>
-                    </div>
+                        <BannerTextBottom>Baixe já nosso manual de moda!</BannerTextBottom>
+                    </BannerText>
 
-                    <div className="banner__text-brand">
-                        <h1 className="banner__text-brand__h1 h1">Reviva Fashion</h1>
-                        <p className="banner__text-brand__p p">by RCHLO</p>
-                    </div>
-                </div>
+                    <BannerTextBrand>
+                        <BannerTextBrandH1>Reviva Fashion</BannerTextBrandH1>
+                        <BannerTextBrandP>by RCHLO</BannerTextBrandP>
+                    </BannerTextBrand>
+                </BannerWrap>
             </section>
         )
     }
