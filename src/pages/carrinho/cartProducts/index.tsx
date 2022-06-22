@@ -1,8 +1,12 @@
 import React from "react";
-import { carrinho} from "./data";
 import styles from './styles.module.scss'
+import { useRecoilValue } from "recoil";
+import { productsSelector } from "../../../selectors";
 
-function CartProducts (){
+const CartProducts: React.FC = () => {
+
+    const products = useRecoilValue(productsSelector);
+
     return (
         <section id="sacola">
             <h2 className={styles.h2}>Minha sacola</h2>
@@ -10,10 +14,10 @@ function CartProducts (){
             <div className={styles.cart_wrapper}>
                 <div className={styles.items_wrapper}>
 
-                    {carrinho.map((item) => (
+                    {products.map((item) => (
                         <div className={styles.item_info}>
                             <div className={styles.item_image}>
-                                <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="189px " height="146px "/>
+                                <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="189px " height="146px " />
                             </div>
 
                             <div className={styles.item_text}>
@@ -22,35 +26,35 @@ function CartProducts (){
                             </div>
 
                             <div className={styles.sizes}>
-                            <div>
-                                <h3 className={styles.h3}>Tamanho escolhido</h3>
+                                <div>
+                                    <h3 className={styles.h3}>Tamanho escolhido</h3>
+                                </div>
+
+                                <div className={styles.products__sizes}>
+                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[0]}</p>
+                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[1]}</p>
+                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[2]}</p>
+                                </div>
                             </div>
 
-                            <div className={styles.products__sizes}>
-                                <p className={styles.products__size}>{item.tamanhos_disponiveis[0]}</p>
-                                <p className={styles.products__size}>{item.tamanhos_disponiveis[1]}</p>
-                                <p className={styles.products__size}>{item.tamanhos_disponiveis[2]}</p>
+                            <div className={styles.price}>
+                                <h3 className={styles.h3}>Valor</h3>
+                                <p className={styles.item_price} id="undValue">{item.preco}</p>
                             </div>
-                        </div>
 
-                        <div className={styles.price}>
-                            <h3 className={styles.h3}>Valor</h3>
-                            <p className={styles.item_price} id="undValue">{item.preco}</p>
-                        </div>
+                            <div className={styles.quantity}>
+                                <h3 className={styles.h3}>Quantidade</h3>
+                                <form id='myform' className={styles.quantity__form} action='#'>
+                                    <input type='number' name='quantity' value='2' className={styles.qty} id="qntd" /*onChange="totalCalculator(document.querySelector('#qntd').value, document.querySelector('#undValue').innerHTML) ; updateCart(document.querySelector('#qntd').value)" */ />
+                                </form>
+                            </div>
 
-                        <div className={styles.quantity}>
-                            <h3 className={styles.h3}>Quantidade</h3>
-                            <form id='myform' className={styles.quantity__form} action='#'>
-                                <input type='number' name='quantity' value='2' className={styles.qty} id="qntd" /*onChange="totalCalculator(document.querySelector('#qntd').value, document.querySelector('#undValue').innerHTML) ; updateCart(document.querySelector('#qntd').value)" *//>
-                            </form>
-                        </div>
+                            <div className={styles.subtotal}>
+                                <h3 className={styles.h3}>Subtotal</h3>
+                                <label className={styles.subtotal__value} id="total">R$ 39,90</label>
+                            </div>
 
-                        <div className={styles.subtotal}>
-                            <h3 className={styles.h3}>Subtotal</h3>
-                            <label className={styles.subtotal__value} id="total">R$ 39,90</label>
                         </div>
-
-                    </div>
                     ))}
                     
                 </div>
@@ -73,7 +77,7 @@ function CartProducts (){
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default CartProducts;

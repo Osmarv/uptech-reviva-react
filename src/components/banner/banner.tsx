@@ -1,23 +1,28 @@
-import React from "react";
+import {
+    BannerWrap,
+    BannerText,
+    BannerTextBottom,
+    BannerTextBrand,
+    BannerTextBrandH1,
+    BannerTextBrandP
+} from './bannerStyle'
 
-class Banner extends React.Component {
-    render() {
-        return (
-            <section className="banner">
-                <div className="banner__wrap">
-                    <div className="banner__text">
-                        <p className="p">Fique por dentro de tudo que há de novidade no mundo da moda!</p>
-                        <p className="banner__text-bottom p">Baixe já nosso manual de moda!</p>
-                    </div>
+function Banner () {
+    return (
+        <section>
+            <BannerWrap>
+                <BannerText>
+                    <p className="p">Fique por dentro de tudo que há de novidade no mundo da moda!</p>
+                    <BannerTextBottom>Baixe já nosso manual de moda!</BannerTextBottom>
+                </BannerText>
 
-                    <div className="banner__text-brand">
-                        <h1 className="banner__text-brand__h1 h1">Reviva Fashion</h1>
-                        <p className="banner__text-brand__p p">by RCHLO</p>
-                    </div>
-                </div>
-            </section>
-        )
-    }
+                <BannerTextBrand>
+                    <BannerTextBrandH1>Reviva Fashion</BannerTextBrandH1>
+                    <BannerTextBrandP>by RCHLO</BannerTextBrandP>
+                </BannerTextBrand>
+            </BannerWrap>
+        </section>
+    )
 }
 
 export default Banner;
