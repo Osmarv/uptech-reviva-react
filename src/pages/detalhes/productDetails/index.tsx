@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { productsState } from "../../../atoms";
+import { useRecoilValue } from "recoil";
 import { productsSelector } from "../../../selectors";
 import { Items } from "../../home/data";
 import {
