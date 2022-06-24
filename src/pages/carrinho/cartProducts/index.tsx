@@ -1,82 +1,100 @@
 import React from "react";
-import styles from './styles.module.scss'
+//import styles from './styles.module.scss'
 import { useRecoilValue } from "recoil";
 import { productsSelector } from "../../../selectors";
-
+import {
+    Section,
+    H3, H2,
+    CartWrapper,
+    ItemImage,
+    ItemInfo,
+    ItemPrice,
+    ItemText,
+    Sizes,
+    ProductSizes,
+    ProductsSize,
+    Valor,
+    Quantity,
+    QuantityForm,
+    QuantityWrapper,
+    Subtotal,
+    Payment,
+    PaymentButton,
+    TotalValues,
+    Total
+} from './indexStyles'
 const CartProducts: React.FC = () => {
 
     const products = useRecoilValue(productsSelector);
 
     return (
-        <section id="sacola">
-            <h2 className={styles.h2}>Minha sacola</h2>
-
-            <div className={styles.cart_wrapper}>
-                <div className={styles.items_wrapper}>
-
+        <Section id="sacola">
+            <H2>Minha sacola</H2>
+            <CartWrapper>
+                <div>
                     {products.map((item) => (
-                        <div className={styles.item_info}>
-                            <div className={styles.item_image}>
+                        <ItemInfo>
+                            <ItemImage>
                                 <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="189px " height="146px " />
-                            </div>
+                            </ItemImage>
 
-                            <div className={styles.item_text}>
-                                <h3 className={styles.h3}>Produto</h3>
-                                <p className={styles.p}>{item.nome}</p>
-                            </div>
+                            <ItemText>
+                                <H3>Produto</H3>
+                                <p>{item.nome}</p>
+                            </ItemText>
 
-                            <div className={styles.sizes}>
+                            <Sizes>
                                 <div>
-                                    <h3 className={styles.h3}>Tamanho escolhido</h3>
+                                    <H3>Tamanho escolhido</H3>
                                 </div>
 
-                                <div className={styles.products__sizes}>
-                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[0]}</p>
-                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[1]}</p>
-                                    <p className={styles.products__size}>{item.tamanhos_disponiveis[2]}</p>
-                                </div>
-                            </div>
+                                <ProductSizes>
+                                    <ProductsSize>{item.tamanhos_disponiveis[0]}</ProductsSize>
+                                    <ProductsSize>{item.tamanhos_disponiveis[1]}</ProductsSize>
+                                    <ProductsSize>{item.tamanhos_disponiveis[2]}</ProductsSize>
+                                </ProductSizes>
+                            </Sizes>
 
-                            <div className={styles.price}>
-                                <h3 className={styles.h3}>Valor</h3>
-                                <p className={styles.item_price} id="undValue">{item.preco}</p>
-                            </div>
+                            <Valor>
+                                <H3>Valor</H3>
+                                <ItemPrice id="undValue">{item.preco}</ItemPrice>
+                            </Valor>
 
-                            <div className={styles.quantity}>
-                                <h3 className={styles.h3}>Quantidade</h3>
-                                <form id='myform' className={styles.quantity__form} action='#'>
-                                    <input type='number' name='quantity' value='2' className={styles.qty} id="qntd" /*onChange="totalCalculator(document.querySelector('#qntd').value, document.querySelector('#undValue').innerHTML) ; updateCart(document.querySelector('#qntd').value)" */ />
-                                </form>
-                            </div>
+                            <QuantityWrapper>
+                                <H3>Quantidade</H3>
+                                <QuantityForm id='myForm' action='#'>
+                                    <Quantity type='number' name='quantity' value='2' id="qntd" /*onChange="totalCalculator(document.querySelector('#qntd').value, document.querySelector('#undValue').innerHTML) ; updateCart(document.querySelector('#qntd').value)" */ />
+                                </QuantityForm>
+                            </QuantityWrapper>
 
-                            <div className={styles.subtotal}>
-                                <h3 className={styles.h3}>Subtotal</h3>
-                                <label className={styles.subtotal__value} id="total">R$ 39,90</label>
-                            </div>
+                            <Subtotal >
+                                <H3>Subtotal</H3>
+                                <label id="total">R$ 39,90</label>
+                            </Subtotal>
 
-                        </div>
+                        </ItemInfo>
                     ))}
                     
                 </div>
 
 
-                <div className={styles.payment}>
-                    <div className={styles.total}>
-                        <div className={styles.total__values}>
-                            <p className={styles.p}>Total</p>
-                            <p className={styles.p}>R$ 159,70</p>
+                <Payment>
+                    <Total>
+                        <TotalValues>
+                            <p>Total</p>
+                            <p>R$ 159,70</p>
 
-                        </div>
-                        <div className={styles.subtotal__values}>
+                        </TotalValues>
+                        <TotalValues>
                             <label htmlFor="quantity" id="qntdPayment1"> </label>
                             <label htmlFor="quantity" id="qntdPayment2"> </label>
-                        </div>
+                        </TotalValues>
 
-                        <button className={styles.payment__button}>ir para pagamento</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <PaymentButton>ir para pagamento</PaymentButton>
+                    </Total>
+                </Payment>
+            </CartWrapper>
+        </Section>
     );
 };
 

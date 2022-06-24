@@ -19,7 +19,8 @@ import {
 	CardInner,
 	CardFront,
 	CardFrontText,
-	ShoppingCart
+	ShoppingCart,
+	Section
 } from './detailsStyle'
 
 function ProductDetails() {
@@ -36,7 +37,7 @@ function ProductDetails() {
 	}, [])
 	
 	return (
-  <section id="productDetails">
+  <Section id="productDetails">
 			<ProductDetailsWrapper>
 				<ProductDetailsImage>
 					<img src={process.env.PUBLIC_URL + product?.imagens[0].url} alt="Foto do produto " width="564px " height="593px "/>
@@ -104,7 +105,7 @@ function ProductDetails() {
 					</div>
 				</ProductDetailsSideInfos>
 			</ProductDetailsWrapper>
-	</section>
+	</Section>
 	)
 }
 

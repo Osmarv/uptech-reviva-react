@@ -6,26 +6,31 @@ import Footer from "../../components/footer/footer";
 import Banner from "../../components/banner/banner";
 import ProductDetails from "./productDetails";
 import Products from "../../components/products/products";
+import styled from "styled-components";
+
+const Section = styled.section`
+	background-color: #E0E0E0;
+`
 
 function Detalhes () {
-    return (
-        <>
-        <Header />
-        <main className="main">
-            <MainMenu />
-                <SearchhForm />
-                <ProductDetails />
-            <Banner />
+return (
+    <Section>
+    <Header />
+    <main className="main">
+        <MainMenu />
+            <SearchhForm />
+            <ProductDetails />
+        <Banner />
 
-            <section className="latest-releases">
-                    <h2 className="latest-releases__h2 h2">Últimos lançamentos</h2>        
-                    <Products />
-            </section>
+        <section className="latest-releases">
+                <h2 className="latest-releases__h2 h2">Últimos lançamentos</h2>        
+                <Products />
+        </section>
 
-        </main>
-        <Footer />
-        </>
-    )
+    </main>
+    <Footer />
+    </Section>
+)
 }
 
 export default Detalhes;
