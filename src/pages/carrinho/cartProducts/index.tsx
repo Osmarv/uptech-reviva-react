@@ -1,7 +1,7 @@
 import React from "react";
 //import styles from './styles.module.scss'
 import { useRecoilValue } from "recoil";
-import { productsSelector } from "../../../selectors";
+import { productsSelector, cartSelector } from "../../../selectors";
 import {
     Section,
     H3, H2,
@@ -25,14 +25,14 @@ import {
 } from './indexStyles'
 const CartProducts: React.FC = () => {
 
-    const products = useRecoilValue(productsSelector);
+    const cart = useRecoilValue(cartSelector);
 
     return (
         <Section id="sacola">
             <H2>Minha sacola</H2>
             <CartWrapper>
                 <div>
-                    {products.map((item) => (
+                    {cart.map((item) => (
                         <ItemInfo>
                             <ItemImage>
                                 <img src={process.env.PUBLIC_URL + item.imagens[0].url} alt={item.imagens[0].descricao} width="189px " height="146px " />
