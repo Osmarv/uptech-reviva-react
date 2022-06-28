@@ -23,8 +23,8 @@ return (
         <Banner />
 
         <section className="latest-releases">
-                <h2 className="latest-releases__h2 h2">Últimos lançamentos</h2>        
-                <Products />
+            <h2 className="latest-releases__h2 h2">Últimos lançamentos</h2>        
+            <Products />
         </section>
 
     </main>

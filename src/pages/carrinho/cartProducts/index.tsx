@@ -1,7 +1,6 @@
 import React from "react";
-//import styles from './styles.module.scss'
 import { useRecoilValue } from "recoil";
-import { productsSelector, cartSelector } from "../../../selectors";
+import { cartSelector } from "../../../selectors";
 import {
     Section,
     H3, H2,
