@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+//import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { estoque, Items } from "../../pages/home/data";
+import { Items } from "../../pages/home/data";
 //import { useRecoilState } from "recoil";
 //import { cartState, productsState } from '../../atoms'
 import {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { estoque, Items } from "../../home/data";
+import { Items } from "../../home/data";
 import {
   ProductDetailsDescription,
   ProductDetailsDescriptionName,
@@ -20,12 +20,12 @@ import {
   ShoppingCart,
   Section,
 } from "./detailsStyle";
-// import { ProductsContext } from "../../../context/products";
+import { useProduct } from "../../../context/ProductContext";
 
 function ProductDetails() {
   const [product, setProduct] = useState<Items>();
   const idProduct = useParams().id;
-  const products = estoque;
+  const { products } = useProduct();
 
   useEffect(() => {
     const result = products.find((p) => p.id === Number(idProduct));
