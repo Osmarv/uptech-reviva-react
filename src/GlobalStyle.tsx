@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
 html,
 body,
 div,
@@ -130,3 +133,12 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+.h2 {
+    font-size: 1.5em;
+    margin: 1rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+`

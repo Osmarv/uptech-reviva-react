@@ -4,12 +4,13 @@ import {
     BannerTextBottom,
     BannerTextBrand,
     BannerTextBrandH1,
-    BannerTextBrandP
+    BannerTextBrandP,
+    Section
 } from './bannerStyle'
 
 function Banner () {
     return (
-        <section>
+        <Section>
             <BannerWrap>
                 <BannerText>
                     <p className="p">Fique por dentro de tudo que há de novidade no mundo da moda!</p>
@@ -21,7 +22,7 @@ function Banner () {
                     <BannerTextBrandP>by RCHLO</BannerTextBrandP>
                 </BannerTextBrand>
             </BannerWrap>
-        </section>
+        </Section>
     )
 }
 

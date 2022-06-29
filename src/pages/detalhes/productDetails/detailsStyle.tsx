@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const Section = styled.section`
+	background-color: #E0E0E0;
+`
 export const ProductDetailsWrapper = styled.div`
 	margin: 1.5rem;
 	display: flex;
@@ -61,6 +64,12 @@ export const Size = styled.label`
 
 export const DetailRadio = styled.input`
 	display: none;
+	&:checked{
+		+${Size}{
+			background-color: #008844;
+			color: white;
+		}
+	}
 `;
 
 export const AddToBagButton = styled.div`

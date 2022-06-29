@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FashionTipsWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    margin: 0 1rem 0 1rem;
     @media screen and (max-width:1300px) {
         display: flex;
         flex-wrap: wrap;
